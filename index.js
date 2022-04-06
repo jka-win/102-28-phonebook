@@ -1,4 +1,7 @@
 
+const express = require("express");
+const morgan = require("morgan");
+
 let persons = [
     { 
       "id": 1,
@@ -22,10 +25,15 @@ let persons = [
     }
 ];
 
-const express = require("express");
-const app = express();
+//////////////////////////////////////////////////
 
+const app = express();
 app.use(express.json());
+
+morgan.token("body", (req, res) => JSON.stringify(req.body));
+app.use(morgan(":method :url :status :res[content-length] - :response-time ms :body"));
+
+//////////////////////////////////////////////////
 
 app.get("/info", (req, res) => {
     const count = persons.length;
@@ -81,6 +89,8 @@ app.delete("/api/persons/:id", (req, res) => {
     persons = persons.filter(p => p.id !== id);
     res.status(204).end();
 });
+
+//////////////////////////////////////////////////
 
 const PORT = 3001;
 app.listen(PORT, () => {

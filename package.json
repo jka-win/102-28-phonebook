@@ -1,0 +1,27 @@
+{
+  "name": "102-28-phonebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jka-win/102-28-phonebook.git"
+  },
+  "author": "JKAnderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jka-win/102-28-phonebook/issues"
+  },
+  "homepage": "https://github.com/jka-win/102-28-phonebook#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
